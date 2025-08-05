@@ -1,8 +1,6 @@
 import { useEffect } from 'react';
 import { ChatInterface } from '../components/ChatInterface';
 
-// Import MDUI components
-import 'mdui';
 
 const Index = () => {
   useEffect(() => {
