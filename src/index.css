@@ -2,73 +2,74 @@
 
 /* Google Material Design 3 Color System */
 :root {
-  /* Google Blue Primary Colors */
-  --md-sys-color-primary: 26 115 232;
+  /* Google Gemini Blue Theme - Light Mode */
+  --md-sys-color-primary: 66 133 244; /* Google Blue */
   --md-sys-color-on-primary: 255 255 255;
-  --md-sys-color-primary-container: 210 227 252;
-  --md-sys-color-on-primary-container: 1 25 54;
+  --md-sys-color-primary-container: 232 240 254;
+  --md-sys-color-on-primary-container: 8 66 152;
   
-  /* Google Surface Colors */
+  /* Modern Surfaces */
   --md-sys-color-surface: 255 255 255;
-  --md-sys-color-on-surface: 28 27 31;
-  --md-sys-color-surface-variant: 231 224 236;
-  --md-sys-color-on-surface-variant: 73 69 79;
+  --md-sys-color-surface-container: 247 249 252;
+  --md-sys-color-surface-container-low: 251 252 254;
+  --md-sys-color-surface-variant: 241 243 247;
+  --md-sys-color-on-surface: 32 33 36;
+  --md-sys-color-on-surface-variant: 95 99 104;
   
-  /* Google Background */
-  --md-sys-color-background: 255 251 254;
-  --md-sys-color-on-background: 28 27 31;
+  /* Background */
+  --md-sys-color-background: 255 255 255;
+  --md-sys-color-on-background: 32 33 36;
   
-  /* Google Error Colors */
-  --md-sys-color-error: 179 38 30;
-  --md-sys-color-on-error: 255 255 255;
+  /* Borders & Outlines */
+  --md-sys-color-outline: 218 220 224;
+  --md-sys-color-outline-variant: 232 234 237;
   
-  /* Google Outline */
-  --md-sys-color-outline: 121 116 126;
-  --md-sys-color-outline-variant: 196 199 197;
-  
-  /* Custom Chat Colors */
-  --chat-user-bg: 26 115 232;
+  /* Chat-specific colors */
+  --chat-user-bg: 66 133 244;
   --chat-user-text: 255 255 255;
-  --chat-ai-bg: 248 249 250;
+  --chat-ai-bg: 247 249 252;
   --chat-ai-text: 32 33 36;
   
-  /* Google Elevation & Shadows */
-  --md-sys-elevation-level1: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-  --md-sys-elevation-level2: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 2px 6px 2px rgba(60, 64, 67, 0.15);
-  --md-sys-elevation-level3: 0px 4px 8px 3px rgba(60, 64, 67, 0.15), 0px 1px 3px rgba(60, 64, 67, 0.3);
+  /* Modern Shadows */
+  --elevation-1: 0 1px 3px rgba(60, 64, 67, 0.12), 0 1px 2px rgba(60, 64, 67, 0.24);
+  --elevation-2: 0 3px 6px rgba(60, 64, 67, 0.15), 0 2px 4px rgba(60, 64, 67, 0.12);
+  --elevation-3: 0 8px 24px rgba(60, 64, 67, 0.15), 0 4px 8px rgba(60, 64, 67, 0.1);
 }
 
 /* Dark Theme */
 [theme="dark"] {
-  /* Google Blue in Dark Mode */
+  /* Google Gemini Blue Theme - Dark Mode */
   --md-sys-color-primary: 138 180 248;
-  --md-sys-color-on-primary: 1 25 54;
-  --md-sys-color-primary-container: 1 25 54;
+  --md-sys-color-on-primary: 8 66 152;
+  --md-sys-color-primary-container: 23 78 166;
   --md-sys-color-on-primary-container: 210 227 252;
   
   /* Dark Surfaces */
-  --md-sys-color-surface: 16 16 20;
+  --md-sys-color-surface: 16 20 24;
+  --md-sys-color-surface-container: 33 37 41;
+  --md-sys-color-surface-container-low: 24 28 32;
+  --md-sys-color-surface-variant: 68 71 78;
   --md-sys-color-on-surface: 227 226 230;
-  --md-sys-color-surface-variant: 73 69 79;
-  --md-sys-color-on-surface-variant: 202 196 208;
+  --md-sys-color-on-surface-variant: 154 160 166;
   
   /* Dark Background */
-  --md-sys-color-background: 16 16 20;
+  --md-sys-color-background: 16 20 24;
   --md-sys-color-on-background: 227 226 230;
   
-  /* Dark Error */
-  --md-sys-color-error: 242 184 181;
-  --md-sys-color-on-error: 105 0 5;
-  
-  /* Dark Outline */
-  --md-sys-color-outline: 147 143 153;
-  --md-sys-color-outline-variant: 73 69 79;
+  /* Dark Borders */
+  --md-sys-color-outline: 95 99 104;
+  --md-sys-color-outline-variant: 68 71 78;
   
   /* Dark Chat Colors */
   --chat-user-bg: 138 180 248;
-  --chat-user-text: 1 25 54;
-  --chat-ai-bg: 32 33 36;
-  --chat-ai-text: 232 234 237;
+  --chat-user-text: 8 66 152;
+  --chat-ai-bg: 33 37 41;
+  --chat-ai-text: 227 226 230;
+  
+  /* Dark Shadows */
+  --elevation-1: 0 1px 3px rgba(0, 0, 0, 0.24), 0 1px 2px rgba(0, 0, 0, 0.36);
+  --elevation-2: 0 3px 6px rgba(0, 0, 0, 0.30), 0 2px 4px rgba(0, 0, 0, 0.24);
+  --elevation-3: 0 8px 24px rgba(0, 0, 0, 0.30), 0 4px 8px rgba(0, 0, 0, 0.20);
 }
 
 /* Google Material Design 3 Base Styles */
@@ -79,10 +80,11 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Google Sans', 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Google Sans', 'Roboto', system-ui, -apple-system, sans-serif;
   background-color: rgb(var(--md-sys-color-background));
   color: rgb(var(--md-sys-color-on-background));
-  line-height: 1.5;
+  line-height: 1.6;
+  font-size: 14px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -117,9 +119,9 @@ body {
               border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Custom scrollbar for chat */
+/* Custom scrollbar - Gemini style */
 .chat-container::-webkit-scrollbar {
-  width: 6px;
+  width: 4px;
 }
 
 .chat-container::-webkit-scrollbar-track {
@@ -127,12 +129,12 @@ body {
 }
 
 .chat-container::-webkit-scrollbar-thumb {
-  background: rgba(var(--md-sys-color-outline), 0.3);
-  border-radius: 3px;
+  background: rgb(var(--md-sys-color-outline) / 0.3);
+  border-radius: 2px;
 }
 
 .chat-container::-webkit-scrollbar-thumb:hover {
-  background: rgba(var(--md-sys-color-outline), 0.5);
+  background: rgb(var(--md-sys-color-outline) / 0.5);
 }
 
 /* Message animation */

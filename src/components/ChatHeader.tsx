@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Sparkles, Moon, Sun, MoreVertical } from 'lucide-react';
 
 export const ChatHeader = () => {
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
@@ -23,13 +24,12 @@ export const ChatHeader = () => {
   return (
     <div style={{
       backgroundColor: `rgb(var(--md-sys-color-surface))`,
-      borderBottom: `1px solid rgb(var(--md-sys-color-outline-variant) / 0.3)`,
-      backdropFilter: 'blur(8px)',
+      borderBottom: `1px solid rgb(var(--md-sys-color-outline-variant))`,
       padding: '16px 24px',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
-      height: '80px'
+      height: '72px'
     }}>
       {/* Logo and Title */}
       <div style={{
@@ -39,33 +39,27 @@ export const ChatHeader = () => {
         flex: 1
       }}>
         <div style={{
-          width: '32px',
-          height: '32px',
-          background: 'linear-gradient(135deg, #4285F4, #34A853, #FBBC05, #EA4335)',
-          borderRadius: '8px',
+          width: '24px',
+          height: '24px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          fontSize: '16px'
+          marginRight: '12px'
         }}>
-          ✨
+          <Sparkles 
+            size={24} 
+            color={`rgb(var(--md-sys-color-primary))`}
+          />
         </div>
         
         <div>
           <div style={{
-            fontSize: '20px',
+            fontSize: '18px',
             fontWeight: 500,
             color: `rgb(var(--md-sys-color-on-surface))`,
-            fontFamily: '"Google Sans", "Roboto", sans-serif'
+            fontFamily: '"Google Sans", sans-serif'
           }}>
             Gemini
-          </div>
-          <div style={{
-            fontSize: '12px',
-            color: `rgb(var(--md-sys-color-on-surface-variant))`,
-            opacity: 0.8
-          }}>
-            AI Assistant
           </div>
         </div>
       </div>
@@ -76,27 +70,6 @@ export const ChatHeader = () => {
         alignItems: 'center',
         gap: '8px'
       }}>
-        {/* Status Indicator */}
-        <div style={{
-          backgroundColor: `rgb(34 197 94 / 0.1)`,
-          color: `rgb(34 197 94)`,
-          fontSize: '11px',
-          fontWeight: 500,
-          padding: '4px 8px',
-          borderRadius: '12px',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '4px'
-        }}>
-          <div style={{ 
-            width: '8px',
-            height: '8px',
-            backgroundColor: 'rgb(34 197 94)',
-            borderRadius: '50%'
-          }} />
-          Online
-        </div>
-
         {/* Theme Toggle */}
         <button 
           style={{
@@ -105,20 +78,19 @@ export const ChatHeader = () => {
             color: `rgb(var(--md-sys-color-on-surface-variant))`,
             cursor: 'pointer',
             padding: '8px',
-            borderRadius: '50%',
+            borderRadius: '20px',
             width: '40px',
             height: '40px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            fontSize: '20px',
-            transition: 'background-color 0.2s'
+            transition: 'background-color 0.2s ease'
           }}
           onClick={toggleTheme}
-          onMouseEnter={(e) => e.currentTarget.style.backgroundColor = `rgb(var(--md-sys-color-surface-variant) / 0.5)`}
+          onMouseEnter={(e) => e.currentTarget.style.backgroundColor = `rgb(var(--md-sys-color-surface-variant) / 0.4)`}
           onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
         >
-          {theme === 'light' ? '🌙' : '☀️'}
+          {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
         </button>
 
         {/* More Options */}
@@ -129,19 +101,18 @@ export const ChatHeader = () => {
             color: `rgb(var(--md-sys-color-on-surface-variant))`,
             cursor: 'pointer',
             padding: '8px',
-            borderRadius: '50%',
+            borderRadius: '20px',
             width: '40px',
             height: '40px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            fontSize: '20px',
-            transition: 'background-color 0.2s'
+            transition: 'background-color 0.2s ease'
           }}
-          onMouseEnter={(e) => e.currentTarget.style.backgroundColor = `rgb(var(--md-sys-color-surface-variant) / 0.5)`}
+          onMouseEnter={(e) => e.currentTarget.style.backgroundColor = `rgb(var(--md-sys-color-surface-variant) / 0.4)`}
           onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
         >
-          ⋮
+          <MoreVertical size={20} />
         </button>
       </div>
     </div>

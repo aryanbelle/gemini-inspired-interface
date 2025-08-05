@@ -1,4 +1,5 @@
 import { useState, KeyboardEvent } from 'react';
+import { Send } from 'lucide-react';
 
 interface ChatInputProps {
   onSendMessage: (message: string) => void;
@@ -24,29 +25,25 @@ export const ChatInput = ({ onSendMessage, disabled = false }: ChatInputProps) =
 
   return (
     <div style={{
-      position: 'sticky',
-      bottom: 0,
       backgroundColor: `rgb(var(--md-sys-color-surface))`,
-      padding: '16px',
-      borderTop: `1px solid rgb(var(--md-sys-color-outline-variant) / 0.3)`,
-      backdropFilter: 'blur(8px)'
+      borderTop: `1px solid rgb(var(--md-sys-color-outline-variant))`,
+      padding: '16px 24px 24px'
     }}>
       <div 
         style={{
-          padding: '8px',
-          backgroundColor: `rgb(var(--md-sys-color-surface-variant) / 0.5)`,
-          borderRadius: '28px',
-          border: `2px solid transparent`,
-          transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-          boxShadow: 'var(--md-sys-elevation-level1)'
+          padding: '12px',
+          backgroundColor: `rgb(var(--md-sys-color-surface-container-low))`,
+          borderRadius: '24px',
+          border: `1px solid rgb(var(--md-sys-color-outline-variant))`,
+          transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
+          boxShadow: 'var(--elevation-1)'
         }}
         className="input-card"
       >
         <div style={{
           display: 'flex',
           alignItems: 'flex-end',
-          gap: '12px',
-          padding: '8px 16px'
+          gap: '8px'
         }}>
           {/* Input Field */}
           <div style={{ flex: 1 }}>
@@ -61,11 +58,11 @@ export const ChatInput = ({ onSendMessage, disabled = false }: ChatInputProps) =
                 outline: 'none',
                 backgroundColor: 'transparent',
                 color: `rgb(var(--md-sys-color-on-surface))`,
-                fontSize: '16px',
-                lineHeight: '1.5',
+                fontSize: '14px',
+                lineHeight: '1.4',
                 resize: 'none',
                 fontFamily: 'inherit',
-                padding: '12px 16px'
+                padding: '8px 12px'
               }}
               onChange={(e) => setInputValue(e.target.value)}
               onKeyDown={handleKeyPress}
@@ -78,50 +75,45 @@ export const ChatInput = ({ onSendMessage, disabled = false }: ChatInputProps) =
             style={{
               backgroundColor: inputValue.trim() 
                 ? `rgb(var(--md-sys-color-primary))` 
-                : `rgb(var(--md-sys-color-surface-variant))`,
+                : `rgb(var(--md-sys-color-surface-container))`,
               color: inputValue.trim()
                 ? `rgb(var(--md-sys-color-on-primary))`
                 : `rgb(var(--md-sys-color-on-surface-variant))`,
-              width: '40px',
-              height: '40px',
-              borderRadius: '50%',
+              width: '36px',
+              height: '36px',
+              borderRadius: '18px',
               border: 'none',
               cursor: inputValue.trim() && !disabled ? 'pointer' : 'default',
-              transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-              transform: inputValue.trim() ? 'scale(1.05)' : 'scale(1)',
-              boxShadow: inputValue.trim() 
-                ? 'var(--md-sys-elevation-level3)' 
-                : 'var(--md-sys-elevation-level1)',
+              transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
+              boxShadow: inputValue.trim() ? 'var(--elevation-2)' : 'none',
               display: 'flex',
               alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: '16px'
+              justifyContent: 'center'
             }}
             onClick={handleSend}
           >
-            ➤
+            <Send size={16} />
           </button>
         </div>
       </div>
 
-      {/* Input Suggestions */}
+      {/* Quick Suggestions */}
       <div style={{
         display: 'flex',
         gap: '8px',
         marginTop: '12px',
-        flexWrap: 'wrap',
-        justifyContent: 'center'
+        flexWrap: 'wrap'
       }}>
         {['What can you help me with?', 'Tell me a joke', 'Explain quantum computing'].map((suggestion, index) => (
           <button
             key={index}
             style={{
-              backgroundColor: `rgb(var(--md-sys-color-surface-variant) / 0.7)`,
+              backgroundColor: `rgb(var(--md-sys-color-surface-container))`,
               color: `rgb(var(--md-sys-color-on-surface-variant))`,
-              fontSize: '13px',
+              fontSize: '12px',
               border: 'none',
-              borderRadius: '20px',
-              padding: '8px 16px',
+              borderRadius: '16px',
+              padding: '6px 12px',
               cursor: disabled ? 'default' : 'pointer',
               transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
               opacity: disabled ? 0.5 : 1
@@ -133,11 +125,11 @@ export const ChatInput = ({ onSendMessage, disabled = false }: ChatInputProps) =
             }}
             onMouseEnter={(e) => {
               if (!disabled) {
-                e.currentTarget.style.backgroundColor = `rgb(var(--md-sys-color-surface-variant))`;
+                e.currentTarget.style.backgroundColor = `rgb(var(--md-sys-color-primary) / 0.1)`;
               }
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = `rgb(var(--md-sys-color-surface-variant) / 0.7)`;
+              e.currentTarget.style.backgroundColor = `rgb(var(--md-sys-color-surface-container))`;
             }}
           >
             {suggestion}

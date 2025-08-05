@@ -1,3 +1,4 @@
+import { User, Bot } from 'lucide-react';
 import { Message } from './ChatInterface';
 
 interface ChatMessageProps {
@@ -15,9 +16,9 @@ export const ChatMessage = ({ message }: ChatMessageProps) => {
       style={{
         display: 'flex',
         justifyContent: message.isUser ? 'flex-end' : 'flex-start',
-        marginBottom: '16px',
-        paddingLeft: message.isUser ? '48px' : '0',
-        paddingRight: message.isUser ? '0' : '48px'
+        marginBottom: '24px',
+        paddingLeft: message.isUser ? '64px' : '0',
+        paddingRight: message.isUser ? '0' : '64px'
       }}
     >
       <div style={{
@@ -35,21 +36,20 @@ export const ChatMessage = ({ message }: ChatMessageProps) => {
           flexDirection: message.isUser ? 'row-reverse' : 'row'
         }}>
           <div style={{
-            width: '32px',
-            height: '32px',
-            borderRadius: '50%',
+            width: '28px',
+            height: '28px',
+            borderRadius: '14px',
             backgroundColor: message.isUser 
               ? `rgb(var(--md-sys-color-primary))` 
-              : `rgb(var(--md-sys-color-surface-variant))`,
+              : `rgb(var(--md-sys-color-surface-container))`,
             color: message.isUser 
               ? `rgb(var(--md-sys-color-on-primary))` 
               : `rgb(var(--md-sys-color-on-surface-variant))`,
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center',
-            fontSize: '16px'
+            justifyContent: 'center'
           }}>
-            {message.isUser ? '👤' : '🤖'}
+            {message.isUser ? <User size={16} /> : <Bot size={16} />}
           </div>
           
           <span style={{
@@ -57,7 +57,7 @@ export const ChatMessage = ({ message }: ChatMessageProps) => {
             color: `rgb(var(--md-sys-color-on-surface-variant))`,
             fontWeight: 500
           }}>
-            {message.isUser ? 'You' : 'AI Assistant'}
+            {message.isUser ? 'You' : 'Gemini'}
           </span>
           
           <span style={{
@@ -71,19 +71,16 @@ export const ChatMessage = ({ message }: ChatMessageProps) => {
 
         {/* Message Bubble */}
         <div style={{
-          padding: '16px 20px',
+          padding: '12px 16px',
           backgroundColor: message.isUser 
             ? `rgb(var(--chat-user-bg))` 
             : `rgb(var(--chat-ai-bg))`,
           color: message.isUser 
             ? `rgb(var(--chat-user-text))` 
             : `rgb(var(--chat-ai-text))`,
-          borderRadius: message.isUser ? '20px 20px 4px 20px' : '20px 20px 20px 4px',
-          boxShadow: message.isUser 
-            ? 'var(--md-sys-elevation-level2)' 
-            : 'var(--md-sys-elevation-level1)',
-          border: 'none',
-          fontSize: '15px',
+          borderRadius: '18px',
+          boxShadow: 'var(--elevation-1)',
+          fontSize: '14px',
           lineHeight: '1.5',
           wordBreak: 'break-word'
         }}>

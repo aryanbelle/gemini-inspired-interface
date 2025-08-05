@@ -53,7 +53,7 @@ export const ChatInterface = () => {
       <ChatHeader />
       
       <div style={{
-        height: 'calc(100vh - 80px)',
+        height: 'calc(100vh - 72px)',
         display: 'flex',
         flexDirection: 'column'
       }}>
@@ -63,7 +63,7 @@ export const ChatInterface = () => {
           style={{
             flex: 1,
             overflowY: 'auto',
-            padding: '16px',
+            padding: '24px',
             scrollBehavior: 'smooth'
           }}
         >
