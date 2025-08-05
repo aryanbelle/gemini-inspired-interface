@@ -1,12 +1,27 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useEffect } from 'react';
+import { ChatInterface } from '../components/ChatInterface';
+
+// Import MDUI components
+import 'mdui';
 
 const Index = () => {
+  useEffect(() => {
+    // Initialize MDUI theme
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const savedTheme = localStorage.getItem('theme');
+    const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+    
+    document.documentElement.setAttribute('theme', theme);
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div style={{
+      minHeight: '100vh',
+      backgroundColor: `rgb(var(--md-sys-color-background))`,
+      color: `rgb(var(--md-sys-color-on-background))`,
+      fontFamily: '"Google Sans", "Roboto", -apple-system, BlinkMacSystemFont, sans-serif'
+    }}>
+      <ChatInterface />
     </div>
   );
 };
